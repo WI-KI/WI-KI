@@ -1,0 +1,29 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+yarn.lock
+package-lock.json
+
+# production
+dist
+
+# misc
+.DS_Store
+
+# attachments
+server/attachments
+
+# config
+config-client.ts
+config-client-dev.ts
+config-client-production.ts
+config-server.js
+config-server-production.js
+
+# upload
+upload_tmp
+
+#dev
+npmcdn/*.js
+npmcdn/*.css
