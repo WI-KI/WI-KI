@@ -14,7 +14,7 @@ const config = {
     },
     jwt: {
         secretOrPrivateKey: "+1234567890",
-        expiresIn: "24h", //unit s
+        expiresIn: "24h",
     },
     minio: {
         config: {
