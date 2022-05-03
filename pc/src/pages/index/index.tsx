@@ -22,7 +22,7 @@ class Index extends React.Component {
 	};
 
 	state = {
-	
+
 	};
 
 	render() {
@@ -46,17 +46,17 @@ class Index extends React.Component {
 							<div className="g-main">
 								<div style={{width: '1440px', height: 220, backgroundColor: '#e5fffb', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
 								<span className="noselect" style={{fontSize: 218, color: '#2c3e50', fontFamily: 'sans-serif' }}>WI-KI</span>
-								</div> 
+								</div>
 								<div className="g-btnList">
 								<div className="g-btn" style={{width: 122, height: 40, fontFamily: 'Georgia', fontWeight: 500,}}onClick={() => {location.href = "/user/Dup4/article/details/4";}}>GO →</div>
 								</div>
 							</div>
 							<div className="g-footer">
 								<span>Contact：<a href="mailto:admin@wi-ki.top">admin@wi-ki.top</a></span>
-								<span>{getYear("2020")}@All Rights Researved 
+								<span>{getYear("2020")}@All Rights Researved
 								{window.location.hostname.split(".").slice(-2).join(".") === "wi-ki.top" &&
 								<>
-								&nbsp;&nbsp;<a href="http://www.beian.miit.gov.cn/">浙ICP备20011170号-2</a>
+								&nbsp;&nbsp;<a href="http://beian.miit.gov.cn/">浙ICP备20011170号</a>
 								</>
 								}
 								</span>
