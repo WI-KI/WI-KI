@@ -1,34 +1,14 @@
 #! /bin/bash
 
-# ./build.sh [tag version]
+TOP_DIR="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+MAIN_DIR="${TOP_DIR}/packages"
 
-mv config-client.ts config-client-dev.ts
-mv config-client-production.ts config-client.ts
+export UMI_ENV=build
 
-cd pc || exit 1
-yarn build
+cd "${MAIN_DIR}"/pc || exit 1
 
-cd ..
+pnpm build
 
-mv config-client.ts config-client-production.ts
-mv config-client-dev.ts config-client.ts
+cd "${MAIN_DIR}"/gulp || exit 1
 
-cd gulp || exit 1
 gulp
-
-cd ../CDN || exit 1
-
-git add .
-git commit -m "release ${1}"
-git push
-git add .
-git tag "${1}"
-git push origin "${1}"
-
-cd .. || exit 1
-# git add .
-# git commit -m $1
-# git push
-
-
-

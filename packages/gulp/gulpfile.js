@@ -1,52 +1,51 @@
 const gulp = require("gulp");
-const clean = require('gulp-clean');
-const concat = require('gulp-concat');
-const htmlmin = require('gulp-html-minifier');
-const cdnPath = ".";
+const clean = require("gulp-clean");
+const concat = require("gulp-concat");
+const htmlmin = require("gulp-html-minifier");
 
 function cleanFile(source) {
-    return gulp.src(source)
-               .pipe(clean({force: true}));
+    return gulp.src(source).pipe(clean({ force: true }));
 }
 
 function cleanBuild() {
-    return (
-        cleanFile(["../CDN/*.js", "../CDN/*.css"]),
-        cleanFile("./pc/*")
-    );
+    return cleanFile(["../cdn/*.js", "../cdn/*.css"]);
 }
 
 function toCDN() {
-    return gulp.src(["../pc/dist/*.js", "../pc/dist/*.css", "../pc/dist/wi-ki_logo_round.png"])
-               .pipe(gulp.dest("../CDN"));
+    return gulp
+        .src([
+            "../pc/dist/*.js",
+            "../pc/dist/*.css",
+            "../pc/dist/*.png",
+            "../pc/dist/*.jpg",
+        ])
+        .pipe(gulp.dest("../cdn"));
 }
 
 function htmlMin(source, destion) {
-	return gulp.src(source)
-		.pipe(htmlmin({
-			removeComments: true,
-			removeScriptTypeAttributes: true,
-			removeStyleLinkTypeAttributes: true,
-			removeEmptyAttributes: true,
-			collapseBooleanAttributes: true,
-			collapseWhitespace: true,
-			minifyJS: true,
-			minifyCSS: true
-		}))
-		.pipe(concat('index.html'))
-		.pipe(gulp.dest(destion));
+    return gulp
+        .src(source)
+        .pipe(
+            htmlmin({
+                removeComments: true,
+                removeScriptTypeAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                removeEmptyAttributes: true,
+                collapseBooleanAttributes: true,
+                collapseWhitespace: true,
+                minifyJS: true,
+                minifyCSS: true,
+            })
+        )
+        .pipe(concat("index.html"))
+        .pipe(gulp.dest(destion));
 }
 
 function toPC() {
-    return (
-        htmlMin("../pc/dist/index.html", "./pc"),
-        gulp.src(["../pc/dist/editor.md/**/*"])
-        .pipe(gulp.dest(`./pc/${cdnPath}/editor.md`))
-    );
+    return htmlMin("../pc/dist/index.html", "../pc/dist");
 }
 
 exports.cleanBuild = cleanBuild;
 exports.toCDN = toCDN;
 exports.toPC = toPC;
 exports.default = gulp.series(cleanBuild, toCDN, toPC);
-
