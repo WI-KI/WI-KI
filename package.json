@@ -1,6 +1,6 @@
 {
     "name": "wi-ki",
-    "version": "1.0.0",
+    "version": "0.0.0",
     "description": "",
     "scripts": {
         "build": "bash build.sh"
@@ -15,6 +15,9 @@
         "url": "https://github.com/WI-KI/WI-KI/issues"
     },
     "homepage": "https://github.com/WI-KI/WI-KI#readme",
+    "files": [
+        "LICENSE"
+    ],
     "devDependencies": {
         "@babel/types": "^7.17.0",
         "@types/node": "^17.0.23",
