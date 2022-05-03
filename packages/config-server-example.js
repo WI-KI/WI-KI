@@ -13,7 +13,7 @@ const config = {
         useConnectionPooling: true,
     },
     jwt: {
-        secretOrPrivateKey: "+Zftu0GLuneS7kf8Z1sC",
+        secretOrPrivateKey: "+1234567890",
         expiresIn: "24h", //unit s
     },
     minio: {
