@@ -2,7 +2,7 @@ const config = {
     title: "WI-KI",
     host: "",
     jsonBodySizeLimit: "1024mb",
-    port: "",
+    port: "3000",
     mysql: {
         connectionLimit: 100,
         host: "",
