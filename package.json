@@ -4,7 +4,8 @@
     "version": "0.0.0",
     "description": "",
     "scripts": {
-        "build": "bash build.sh"
+        "build": "bash build.sh",
+        "release": "bash release.sh"
     },
     "repository": {
         "type": "git",
