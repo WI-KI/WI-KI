@@ -3,9 +3,9 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-        "start": "umi dev",
-        "build": "umi build",
         "postinstall": "umi generate tmp",
+        "dev": "rm -rf ./public && cp -a ./assets ./public && umi dev",
+        "build": "rm -rf ./public && umi build && cp -a ./assets/* ./dist/",
         "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
         "test": "umi-test",
         "test:coverage": "umi-test --coverage"

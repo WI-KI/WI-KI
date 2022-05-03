@@ -1,5 +1,4 @@
-
-let config = {
+const config = {
     "title": "WIKI",
     "indexTitle": "WIKI",
     "host": "",
