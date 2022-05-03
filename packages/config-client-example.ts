@@ -1,30 +1,30 @@
 const config = {
-    "title": "WIKI",
-    "indexTitle": "WIKI",
-    "host": "",
-    "cdnHost": "",
-    "editor": {
-        "uploadURL": "/api/upload/image",
-        "base64URL": "/api/upload/getbase64",
-        "texHostUrl": "",
-        "texTargetUrl": "",
-        "imageLazyLoad": true,
+    title: "WI-KI",
+    indexTitle: "WI-KI",
+    host: "",
+    cdnHost: "",
+    editor: {
+        uploadURL: "/api/upload/image",
+        base64URL: "/api/upload/getbase64",
+        texHostUrl: "",
+        texTargetUrl: "",
+        imageLazyLoad: true,
     },
-    "proxy": {
+    proxy: {
         "/api": {
-            target: 'http://localhost:3000',
+            target: "http://localhost:3000",
             // pathRewrite: { '^': '' },
-            changeOrigin: true
+            changeOrigin: true,
         },
         "/attachments": {
-            target: "https://wiki.dup4.top",
+            target: "https://wi-ki.top",
             changeOrigin: true,
-        }
+        },
     },
-    "api": {
-        "url": "/api",
+    api: {
+        url: "/api",
     },
-    "publicPath": "/",
-}
+    publicPath: "/",
+};
 
 export default config;
