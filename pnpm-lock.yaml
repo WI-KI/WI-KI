@@ -71,6 +71,7 @@ importers:
       redux: 4.0.0
       serve: ^11.3.0
       umi: ^3.1.0
+      umi-request: ^1.4.0
       yorkie: ^2.0.0
     dependencies:
       '@ant-design/icons': 4.7.0_wcqkhtmu7mswc6yz4uyexck3ty
@@ -101,6 +102,7 @@ importers:
       redux: 4.0.0
       serve: 11.3.2
       umi: 3.5.23_react-router@5.3.1
+      umi-request: 1.4.0
       yorkie: 2.0.0
 
   packages/server:
